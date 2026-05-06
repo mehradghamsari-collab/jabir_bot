@@ -1625,6 +1625,5 @@ def main():
 
     print("🌹 JABIR: THE PERFUMER bot is running...")
     print("  Commands: /start /new /join /begin /roll /cards /rules")
-app.run_polling(allowed_updates=Update.ALL_TYPES)
-if __name__ == "__main__":
+app.run_polling() if __name__ == "__main__":
     main()
