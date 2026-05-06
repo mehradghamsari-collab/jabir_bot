@@ -1625,8 +1625,42 @@ def main():
 
     print("🌹 JABIR: THE PERFUMER bot is running...")
     print("  Commands: /start /new /join /begin /roll /cards /rules")
-app.run_polling()
+# ── MAIN ──────────────────────────────────────────────────────────────────────
+
+def main():
+    if BOT_TOKEN == "YOUR_BOT_TOKEN_HERE":
+        print("Set your BOT_TOKEN before running!")
+        return
+
+    app = Application.builder().token(BOT_TOKEN).build()
+
+    app.add_handler(CommandHandler("start",    cmd_start))
+    app.add_handler(CommandHandler("help",     cmd_help))
+    app.add_handler(CommandHandler("new",      cmd_new))
+    app.add_handler(CommandHandler("join",     cmd_join))
+    app.add_handler(CommandHandler("begin",    cmd_begin))
+    app.add_handler(CommandHandler("status",   cmd_status))
+    app.add_handler(CommandHandler("hand",     cmd_hand))
+    app.add_handler(CommandHandler("cards",    cmd_cards))
+    app.add_handler(CommandHandler("roll",     cmd_roll))
+    app.add_handler(CommandHandler("bet",      cmd_bet))
+    app.add_handler(CommandHandler("workers",  cmd_workers))
+    app.add_handler(CommandHandler("extract",  cmd_extract))
+    app.add_handler(CommandHandler("age",      cmd_age))
+    app.add_handler(CommandHandler("withdraw", cmd_withdraw))
+    app.add_handler(CommandHandler("lab",      cmd_lab))
+    app.add_handler(CommandHandler("upgrade",  cmd_upgrade))
+    app.add_handler(CommandHandler("market",   cmd_market))
+    app.add_handler(CommandHandler("score",    cmd_score))
+    app.add_handler(CommandHandler("rules",    cmd_rules))
+    app.add_handler(CommandHandler("allcards", cmd_allcards))
+    app.add_handler(CommandHandler("synths",   cmd_synths))
+    app.add_handler(CallbackQueryHandler(all_callbacks))
+
+    print("🌹 JABIR: THE PERFUMER bot is running...")
+    app.run_polling()
 
 if __name__ == "__main__":
+    main()
     main()
     main()
